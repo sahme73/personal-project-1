@@ -1,0 +1,8 @@
+(Method/Instructions) - safeer (5/29/2022)
+Modified: (12/18/2022)
+
+cmake/Run 'cmake --build .' in '../CMakeBuild/Step1_build'
+
+make/Run 'make', 'make exec', 'make tests', 'make clean' for each build in '../MakeBuild'
+
+console/Run 'g++ -Wall -g -o exec.exe' #clang compilation needs more testing to build (clang fixed - 12/18/2022)
