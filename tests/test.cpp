@@ -7,7 +7,6 @@
 using namespace std;
 
 int main() {
-    
     vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
 
     for (const string& word : msg) {
@@ -30,5 +29,4 @@ int main() {
     std::cout << VectorizedStoi64bit("3") << std::endl;
     std::cout << VectorizedStoi64bit("321") << std::endl;
     std::cout << VectorizedStoi64bit("21") << std::endl;
-
 }

@@ -1,9 +1,6 @@
 #include "operations.h"
 
-//#include <immintrin.h>
-
 long long int Stoi64bit(std::string s) {
-    
     if (s.size() == 0)
         return 0;
 
@@ -22,7 +19,6 @@ long long int Stoi64bit(std::string s) {
     }
 
     return output;
-
 }
 
 long long int VectorizedStoi64bit(std::string s) {
@@ -42,4 +38,8 @@ long long int VectorizedStoi64bit(std::string s) {
     }
 
     return (s.at(0) == '-') ? output *= -1 : output;
+}
+
+size_t GetNumDigits(std::string s) {
+    return (s.at(0) == '-') ? s.size() - 1 : s.size();
 }

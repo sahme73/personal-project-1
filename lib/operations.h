@@ -11,10 +11,12 @@
  */
 std::string Karatsuba(std::string x, std::string y);
 std::string KaratsubaHelper(std::string x, std::string y);
-size_t GetNumDigits(std::string s); //returns number of digits in number string
+void VerifyKaratsubaInput(std::string s); //checks for problematic inputs
 
 /*
  *  Upgraded string to 64-bit integer.
  */
 long long int Stoi64bit(std::string s);
 long long int VectorizedStoi64bit(std::string s);
+
+size_t GetNumDigits(std::string s); //returns number of digits in number string
