@@ -17,4 +17,10 @@ int main() {
 
     std::cout << Stoi64bit("82346973924") << std::endl;
     std::cout << Stoi64bit("-82346973924") << std::endl;
+    std::cout << Stoi64bit("123") << std::endl;
+    std::cout << Stoi64bit("12") << std::endl;
+    std::cout << Stoi64bit("3") << std::endl;
+    std::cout << Stoi64bit("321") << std::endl;
+    std::cout << Stoi64bit("21") << std::endl;
+    
 }
