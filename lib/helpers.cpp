@@ -37,7 +37,6 @@ long long int VectorizedStoi64bit(std::string s) {
 
     #pragma clang loop vectorize(enable)
     for (; i >= min; i--) {
-
         output += ((((int)s.at(i)) - 48) * base);
         base *= 10;
     }

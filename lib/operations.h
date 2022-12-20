@@ -11,6 +11,7 @@
  */
 std::string Karatsuba(std::string x, std::string y);
 std::string KaratsubaHelper(std::string x, std::string y);
+size_t GetNumDigits(std::string s); //returns number of digits in number string
 
 /*
  *  Upgraded string to 64-bit integer.

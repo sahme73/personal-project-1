@@ -1,42 +1,27 @@
 #include "operations.h"
 
 // TO DO: 
-// 1 - fix s1 error
-// 2 - clean up functions
+// 1 - modify functions to prevent bad inputs (non-numbers)
+// 2 - clean up functions (re-check Google Style Guide for naming conventions -- only needed)
 // 3 - run benchmarks
 
 std::string Karatsuba(std::string x, std::string y) {
 
     std::string output = "";
-    size_t max = std::to_string(LLONG_MIN).size();
+    size_t max = std::to_string(LLONG_MAX).size();
+    size_t x_size = GetNumDigits(x);
+    size_t y_size = GetNumDigits(y);
 
-    if (x.size() < (max - 2) && y.size() < (max - 2)) {
-        output = KaratsubaHelper(x, y);
-
-    }
-
-    if (x.size() > max) {
-        output += "Error: first input is too large! ";
-    }
-
-    if (y.size() > max) {
-        output += "Error: second input is too large! ";
-    }
-
-    if (output != "") {
-        return output;
-    }
-
-    //both inputs have the same number of digits as the maximum
-    std::string minimum = std::to_string(LLONG_MIN); //-9223372036854775808
-    std::string maximum = std::to_string(LLONG_MAX); // 9223372036854775807
-
-    //check x:
-
-    //check y:
-
-    return "Error: s1 ";
+    //check if inputs result in errors
+    if ((x_size + y_size) >= max)
+        output += "Error: overflow! ";
+    if (x_size > max)
+        output += "Error: (x) input is too large! ";
+    if (y_size > max)
+        output += "Error: (y) input is too large! ";
     
+    //return errors or computation result
+    return (output != "") ? output : KaratsubaHelper(x, y);
 }
 
 std::string KaratsubaHelper(std::string x, std::string y) {
@@ -62,4 +47,8 @@ std::string KaratsubaHelper(std::string x, std::string y) {
 
     return std::to_string(ac * ((long long int)pow(10, (2 * middle))) + (ad_plus_bc * ((long long int)pow(10, middle))) + bd);
 
+}
+
+size_t GetNumDigits(std::string s) {
+    return (s.at(0) == '-') ? s.size() - 1 : s.size();
 }
