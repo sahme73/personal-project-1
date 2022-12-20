@@ -13,7 +13,7 @@ CFLAGS = -Wall -g
 #Misc. Vars:
 
 FILES = lib/*.cpp src/*.cpp
-TEST_FILES = test.cpp
+TEST_FILES = lib/*.cpp tests/test.cpp
 
 ####################################################################################################
 
