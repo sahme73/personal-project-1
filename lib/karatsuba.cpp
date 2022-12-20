@@ -42,7 +42,7 @@ std::string Karatsuba(std::string x, std::string y) {
 std::string KaratsubaHelper(std::string x, std::string y) {
 
     if (x.size() == 1 || y.size() == 1) {
-        return std::to_string(Stoi64bit(x) * Stoi64bit(y));
+        return std::to_string(VectorizedStoi64bit(x) * VectorizedStoi64bit(y));
     }
 
     if (x.at(0) == '-' && y.at(0) == '-') {
@@ -51,14 +51,14 @@ std::string KaratsubaHelper(std::string x, std::string y) {
     }
 
     long long int middle = std::max(x.size(), y.size()) / 2;
-    long long int a = Stoi64bit(x) / (long long int)(pow(10, middle));
-    long long int b = Stoi64bit(x) % (long long int)(pow(10, middle));
-    long long int c = Stoi64bit(y) / (long long int)(pow(10, middle));
-    long long int d = Stoi64bit(y) % (long long int)(pow(10, middle));
+    long long int a = VectorizedStoi64bit(x) / (long long int)(pow(10, middle));
+    long long int b = VectorizedStoi64bit(x) % (long long int)(pow(10, middle));
+    long long int c = VectorizedStoi64bit(y) / (long long int)(pow(10, middle));
+    long long int d = VectorizedStoi64bit(y) % (long long int)(pow(10, middle));
 
-    long long int ac = Stoi64bit(Karatsuba(std::to_string(a), std::to_string(c)));
-    long long int bd = Stoi64bit(Karatsuba(std::to_string(b), std::to_string(d)));
-    long long int ad_plus_bc = Stoi64bit(Karatsuba(std::to_string(a + b), std::to_string(c + d))) - ac - bd;
+    long long int ac = VectorizedStoi64bit(Karatsuba(std::to_string(a), std::to_string(c)));
+    long long int bd = VectorizedStoi64bit(Karatsuba(std::to_string(b), std::to_string(d)));
+    long long int ad_plus_bc = VectorizedStoi64bit(Karatsuba(std::to_string(a + b), std::to_string(c + d))) - ac - bd;
 
     return std::to_string(ac * ((long long int)pow(10, (2 * middle))) + (ad_plus_bc * ((long long int)pow(10, middle))) + bd);
 
