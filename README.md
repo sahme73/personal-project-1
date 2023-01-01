@@ -10,10 +10,14 @@ Created: 12/18/2022
 
 <p> Fast 64-bit integer multiplication application utilizing Karatsuba's Algorithm. <p/>
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Building
 
 <p> This project was developed via mingw64 using the clang compiler (version 15.0.5).
     Refer to the Makefile for local build instructions.  <p/>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Feature Goals
 
