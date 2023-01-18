@@ -1,3 +1,11 @@
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#building">Building</a></li>
+    <li><a href="#feature-goals">Feature Goals</a></li>
+  </ol>
+</details>
 
 ---
 
@@ -27,6 +35,6 @@ Created: 12/18/2022
 
 ---
 
-Last Modified: 01/01/2023
+Last Modified: 01/17/2023
 
 ---
